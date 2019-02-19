@@ -1,0 +1,17 @@
+{% extends "student/base.html" %}
+
+{% block bodyblock %}
+    <h1> NEW </h1>
+    <hr>
+    <h3>학생 정보 생성하기<h3>
+    <form action="/students/create/" method="post">
+        <!--자동으로 input 태그를 만들어 토큰 값을 저장해준다.-->
+        {% csrf_token %}
+        <h5>NAME: <input type="text" name="name"/></h5>
+        <h5>EMAIL: <input type="email" name="email"/></h5>
+        <h5>BIRTHDAY: <input type="date" name="birthday"/></h5>
+        <h5>AGE: <input type="number" name="age"/></h5>
+        <input type="submit" value="Submit"/>
+    </form>
+{% endblock %}    
+
